@@ -2,7 +2,7 @@ package questoes;
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
-public class ProgramaQuis {
+public class ProgramaQuiz {
 
 	public static void main(String[] args) {
 		
@@ -10,21 +10,22 @@ public class ProgramaQuis {
 	        int acertos =0;
 	        int erros = 0;
 	        
-	        String usuario;
+	        String usuario=null;
 	        usuario = JOptionPane.showInputDialog("Digite seu nome: "); 
 	        JOptionPane.showConfirmDialog(null, "Seja bem Vindo(a), " + usuario + "!!!");
-	        
-			String pergunta1, pergunta2, pergunta3;
+       
+	   	       
+	String pergunta1, pergunta2, pergunta3;
 	        
 	      pergunta1 = JOptionPane.showInputDialog("\n"+ usuario + "," + "\n"
 	        		+ "O que significa if? \n"
-	        		+ "A) Talvez  \n"
-	        		+ "B) Então  \n"
-	        		+ "C) Se  \n"
-	        		+ "D) Sei lá  \n"
+	        		+ "[1] Talvez  \n"
+	        		+ "[2] Então  \n"
+	        		+ "[3] Se  \n"
+	        		+ "[4] Sei lá  \n"
 	   );
 	        
-	        if (("c".equals(pergunta1))) {
+	        if (("3".equals(pergunta1))) {
 	        	JOptionPane.showMessageDialog(null, "Resposta Certa! ");
 	        	int acerto = acertos ++;
 	        	
@@ -36,12 +37,12 @@ public class ProgramaQuis {
 	        
 	        pergunta2 = JOptionPane.showInputDialog("\n"+ usuario + "," + "\n"
 	        		+ "O que significa Else? \n"
-	        		+ "A) Se  \n"
-	        		+ "B) Se não  \n"
-	        		+ "C) Ok  \n"
-	        		+ "D) Então"
+	        		+ "[1] Se  \n"
+	        		+ "[2] Se não  \n"
+	        		+ "[3] Ok  \n"
+	        		+ "[4] Então"
 	        		);
-	        if (("b".equals(pergunta2))) {
+	        if (("2".equals(pergunta2))) {
 	        	JOptionPane.showMessageDialog(null, "Resposta Certa! ");
 	        	int acerto = acertos ++;
 	        }
@@ -51,13 +52,13 @@ public class ProgramaQuis {
 	        }
 	       pergunta3 =  JOptionPane.showInputDialog("\n"+ usuario + "," + "\n"
 	        		+ "O que é Java? \n"
-	        		+ "A) É um método para criptrografar objetos  \n"
-	        		+ "B) É uma caixa de diálogo  \n"
-	        		+ "C) É uma linguagem da programação orientada a objetos  \n"
-	        		+ "D) É um método para pesquisas"
+	        		+ "[1] É um método para criptrografar objetos  \n"
+	        		+ "[2] É uma caixa de diálogo  \n"
+	        		+ "[3] É um método para pesquisas \n"
+	        		+ "[4] É uma linguagem da programação orientada a objetos  \n"
 	        		);
 	       
-	       if (("c".equals(pergunta3))) {
+	       if (("4".equals(pergunta3))) {
 	        	JOptionPane.showMessageDialog(null, "Resposta Certa! ");
 	        	int acerto = acertos ++;
 	        }

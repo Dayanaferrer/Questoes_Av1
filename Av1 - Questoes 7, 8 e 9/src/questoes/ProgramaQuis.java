@@ -1,26 +1,75 @@
 package questoes;
 import java.util.Scanner;
+import javax.swing.JOptionPane;
 
 public class ProgramaQuis {
 
 	public static void main(String[] args) {
 		
 	        Scanner scanner = new Scanner(System.in);
+	        int acertos =0;
+	        int erros = 0;
 	        
-	        String pergunta1 = "Qual destes passwords foi o mais usado na internet? ";
-	        System.out.println(pergunta1);
-
-	        System.out.println("\n[1] a1b2c3");
-	        System.out.println("[2] abcdef");
-	        System.out.println("[3] 123456");
+	        String usuario;
+	        usuario = JOptionPane.showInputDialog("Digite seu nome: "); 
+	        JOptionPane.showConfirmDialog(null, "Seja bem Vindo(a), " + usuario + "!!!");
 	        
-	        System.out.println("\nDigite sua resposta: ");
-	        String resposta = scanner.nextLine();
+			String pergunta1, pergunta2, pergunta3;
 	        
-	        if (resposta.equals("3")) {
-	        	System.out.println("Reposta Correta! ");
-	        }else {
-	        	System.out.println("Reposta Errada !!!!");
+	      pergunta1 = JOptionPane.showInputDialog("\n"+ usuario + "," + "\n"
+	        		+ "O que significa if? \n"
+	        		+ "A) Talvez  \n"
+	        		+ "B) Então  \n"
+	        		+ "C) Se  \n"
+	        		+ "D) Sei lá  \n"
+	   );
+	        
+	        if (("c".equals(pergunta1))) {
+	        	JOptionPane.showMessageDialog(null, "Resposta Certa! ");
+	        	int acerto = acertos ++;
+	        	
 	        }
+	        else {
+	        	JOptionPane.showMessageDialog(null, "Resposta Errada!!!");
+	        	int erro = erros ++;
+	        }
+	        
+	        pergunta2 = JOptionPane.showInputDialog("\n"+ usuario + "," + "\n"
+	        		+ "O que significa Else? \n"
+	        		+ "A) Se  \n"
+	        		+ "B) Se não  \n"
+	        		+ "C) Ok  \n"
+	        		+ "D) Então"
+	        		);
+	        if (("b".equals(pergunta2))) {
+	        	JOptionPane.showMessageDialog(null, "Resposta Certa! ");
+	        	int acerto = acertos ++;
+	        }
+	        else {
+	        	JOptionPane.showMessageDialog(null, "Resposta Errada!!!");
+	        	int erro = erros ++;
+	        }
+	       pergunta3 =  JOptionPane.showInputDialog("\n"+ usuario + "," + "\n"
+	        		+ "O que é Java? \n"
+	        		+ "A) É um método para criptrografar objetos  \n"
+	        		+ "B) É uma caixa de diálogo  \n"
+	        		+ "C) É uma linguagem da programação orientada a objetos  \n"
+	        		+ "D) É um método para pesquisas"
+	        		);
+	       
+	       if (("c".equals(pergunta3))) {
+	        	JOptionPane.showMessageDialog(null, "Resposta Certa! ");
+	        	int acerto = acertos ++;
+	        }
+	        else {
+	        	JOptionPane.showMessageDialog(null, "Resposta Errada!!!");
+	        	int erro = erros ++;
+	        }
+	       
+	       JOptionPane.showMessageDialog(null, usuario + "\nTotal de Acerto: " + acertos +"\nTotal de Erros: " + erros);
 }
+	       
+	        
+	        
+
 }

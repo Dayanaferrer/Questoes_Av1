@@ -42,4 +42,4 @@ desconto e salário liquido.
 <br />
 
 ## 📁 Acesso ao projeto
-Você pode acessar os arquivos do projeto clicando [aqui](https://).
+Você pode acessar os arquivos do projeto clicando [aqui](https://github.com/Dayanaferrer/Questoes_Av1/tree/master/Av1%20-%20Questoes%207%2C%208%20e%209/src).

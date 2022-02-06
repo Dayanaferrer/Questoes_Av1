@@ -1,4 +1,4 @@
 package questao8;
 
-public class Login {
+public class LoginDoSistema {
 }

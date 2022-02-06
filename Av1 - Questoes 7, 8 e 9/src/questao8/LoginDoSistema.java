@@ -1,5 +1,6 @@
 package questao8;
 import java.awt.Color;
+import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.Frame;
 import java.awt.event.ActionEvent;
@@ -32,7 +33,7 @@ public class LoginDoSistema implements ActionListener{
 		digiteSenha.setBounds (50, 150, 75, 25);
 		
 		mensagemParaUsuario.setBounds(125, 250, 250, 35);
-		mensagemParaUsuario.setFont(new Font (null, Font.ITALIC, 25));
+		mensagemParaUsuario.setFont(new Font (null, Font.ROMAN_BASELINE, 14));
 		
 		nomeUsuario.setBounds(125,100, 200, 25);
 		senhaUsuario.setBounds(125,150, 200, 25);
@@ -57,7 +58,6 @@ public class LoginDoSistema implements ActionListener{
 		janelaDoPrograma.setSize (420,420);
 		janelaDoPrograma.setLayout(null);
 		janelaDoPrograma.setVisible(true);
-		
 			
 	}
 
@@ -70,23 +70,29 @@ public class LoginDoSistema implements ActionListener{
 		}
 		
 		
-		/* Pegar o Login e senha com a palavra associada se ok, verifica. */
+		/* Pegar o Login e senha com a palavra associada se ok, verifica.  Talvezs aqui tbm - implementar horario */
 		
 		if (e.getSource()==botaoDeLogin) {
 			
 			String IdUsuario =  nomeUsuario.getText();
 			String Idsenha = String.valueOf(senhaUsuario.getPassword());
 			
-		if(logininfo.containsKey(IdUsuario)) {
-			if(logininfo.get(IdUsuario).equals(Idsenha)) {				
-				mensagemParaUsuario.setForeground(Color.green);
-				mensagemParaUsuario.setText("Você se logou ao nosso sistema.");
-				Page BemvindoAoSistema = new Page();
-				
+		if(informacaologin.containsKey(IdUsuario)) {
+			if(informacaologin.get(IdUsuario).equals(Idsenha)) {				
+				mensagemParaUsuario.setForeground(Color.darkGray);
+				mensagemParaUsuario.setText("Você se logou ao nosso sistema!");
+				Page BemvindoPage = new Page ();				
 				
 			}
+			else {
+				mensagemParaUsuario.setForeground(Color.red);
+				mensagemParaUsuario.setText("Senha incorreta.");
+			}
 		}
-		
+		else {
+			mensagemParaUsuario.setForeground(Color.red);
+			mensagemParaUsuario.setText("Usuário não encontrado.");
+		}
 	}
 }
 }

@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
@@ -15,7 +16,10 @@ public class LoginDoSistema implements ActionListener{
 	JButton botaoDeReiniciar = new JButton("Recarregar");
 	JTextField nomeUsuario = new JTextField ();
 	JPasswordField senhaUsuario = new JPasswordField();
-	
+	JLabel digiteUsuario = new JLabel ("Usuário> ");
+	JLabel digiteSenha = new JLabel ("Senha> ");
+	JLabel usuarioInvalido = new JLabel ();
+
 	HashMap <String,String> informacaologin = new HashMap <String, String>();
 	
 	LoginDoSistema(HashMap <String, String> loginOriginal){

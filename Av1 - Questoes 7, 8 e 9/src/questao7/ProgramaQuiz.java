@@ -70,7 +70,7 @@ public class ProgramaQuiz {
 	       JOptionPane.showMessageDialog(null, usuario + "\nTotal de Acerto: " + acertos +"\nTotal de Erros: " + erros);
 }
 	       
-	        
+	     
 	        
 
 }

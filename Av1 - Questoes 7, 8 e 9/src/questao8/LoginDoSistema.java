@@ -20,7 +20,7 @@ public class LoginDoSistema implements ActionListener{
 	JPasswordField senhaUsuario = new JPasswordField();
 	JLabel digiteUsuario = new JLabel ("Usuário: ");
 	JLabel digiteSenha = new JLabel ("Senha: ");
-	JLabel mensagemParaUsuario = new JLabel ("TESTANDO");
+	JLabel mensagemParaUsuario = new JLabel ();
 	HashMap <String,String> informacaologin = new HashMap <String, String>();
 	
 	LoginDoSistema(HashMap <String, String> loginOriginal){
@@ -33,9 +33,14 @@ public class LoginDoSistema implements ActionListener{
 		mensagemParaUsuario.setBounds(125, 250, 250, 35);
 		mensagemParaUsuario.setFont(new Font (null, Font.ITALIC, 25));
 		
+		nomeUsuario.setBounds(125,100, 200, 25);
+		senhaUsuario.setBounds(125,150, 200, 25);
+		
 		janelaDoPrograma.add(digiteUsuario);
 		janelaDoPrograma.add(digiteSenha);
-		janelaDoPrograma.add(mensagemParaUsuario);	
+		janelaDoPrograma.add(mensagemParaUsuario);
+		janelaDoPrograma.add(nomeUsuario);
+		janelaDoPrograma.add(senhaUsuario);
 		janelaDoPrograma.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		janelaDoPrograma.setSize (420,420);
 		janelaDoPrograma.setLayout(null);

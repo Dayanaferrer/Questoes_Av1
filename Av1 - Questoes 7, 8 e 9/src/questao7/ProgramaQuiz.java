@@ -13,8 +13,7 @@ public class ProgramaQuiz {
 	        String usuario=null;
 	        usuario = JOptionPane.showInputDialog("Digite seu nome: "); 
 	        JOptionPane.showConfirmDialog(null, "Seja bem Vindo(a), " + usuario + "!!!");
-       
-	   	       
+       	   	       
 	String pergunta1, pergunta2, pergunta3;
 	        
 	      pergunta1 = JOptionPane.showInputDialog("\n"+ usuario + "," + "\n"

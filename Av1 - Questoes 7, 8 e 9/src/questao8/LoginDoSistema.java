@@ -1,4 +1,5 @@
 package questao8;
+import java.awt.Color;
 import java.awt.Font;
 import java.awt.Frame;
 import java.awt.event.ActionEvent;
@@ -36,11 +37,22 @@ public class LoginDoSistema implements ActionListener{
 		nomeUsuario.setBounds(125,100, 200, 25);
 		senhaUsuario.setBounds(125,150, 200, 25);
 		
+		botaoDeLogin.setBounds(125, 200, 100, 25);
+		botaoDeLogin.setFocusable(false);
+		botaoDeLogin.addActionListener(this);
+		
+		botaoDeReiniciar.setBounds(225, 200, 100, 25);
+		botaoDeReiniciar.setFocusable(false);
+		botaoDeReiniciar.addActionListener(this);
+		
+		
 		janelaDoPrograma.add(digiteUsuario);
 		janelaDoPrograma.add(digiteSenha);
 		janelaDoPrograma.add(mensagemParaUsuario);
 		janelaDoPrograma.add(nomeUsuario);
 		janelaDoPrograma.add(senhaUsuario);
+		janelaDoPrograma.add(botaoDeLogin);
+		janelaDoPrograma.add(botaoDeReiniciar);
 		janelaDoPrograma.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		janelaDoPrograma.setSize (420,420);
 		janelaDoPrograma.setLayout(null);
@@ -52,6 +64,29 @@ public class LoginDoSistema implements ActionListener{
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		
+		if (e.getSource() == botaoDeReiniciar) {
+			nomeUsuario.setText("");
+			senhaUsuario.setText("");
+		}
+		
+		
+		/* Pegar o Login e senha com a palavra associada se ok, verifica. */
+		
+		if (e.getSource()==botaoDeLogin) {
+			
+			String IdUsuario =  nomeUsuario.getText();
+			String Idsenha = String.valueOf(senhaUsuario.getPassword());
+			
+		if(logininfo.containsKey(IdUsuario)) {
+			if(logininfo.get(IdUsuario).equals(Idsenha)) {				
+				mensagemParaUsuario.setForeground(Color.green);
+				mensagemParaUsuario.setText("Você se logou ao nosso sistema.");
+				Page BemvindoAoSistema = new Page();
+				
+				
+			}
+		}
 		
 	}
+}
 }

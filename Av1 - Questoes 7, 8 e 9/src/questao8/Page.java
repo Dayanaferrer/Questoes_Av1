@@ -7,12 +7,13 @@ import javax.swing.JLabel;
 public class Page {
 
 	JFrame frame = new JFrame ();
-	JLabel bemvindoLabel = new JLabel ("Olá !!!");
+	JLabel bemvindoLabel = new JLabel (", você se logou ao nosso sistema.");
 	
-	Page (){
+	Page (String IdUsuario){
 		
 		bemvindoLabel.setBounds(0,0,200,35);
-		bemvindoLabel.setFont(new Font (null, Font.ROMAN_BASELINE, 22));
+		bemvindoLabel.setFont(new Font (null, Font.ROMAN_BASELINE, 12));
+		bemvindoLabel.setText(" Hello," + IdUsuario);
 		
 		frame.add(bemvindoLabel);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -20,6 +21,7 @@ public class Page {
 		frame.setLayout(null);
 		frame.setVisible(true);
 		
+		/* Implementar mensagem com horario por aqui talvezs. */
 	}
 }
 

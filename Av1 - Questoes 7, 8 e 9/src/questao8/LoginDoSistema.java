@@ -81,7 +81,8 @@ public class LoginDoSistema implements ActionListener{
 			if(informacaologin.get(IdUsuario).equals(Idsenha)) {				
 				mensagemParaUsuario.setForeground(Color.darkGray);
 				mensagemParaUsuario.setText("Você se logou ao nosso sistema!");
-				Page BemvindoPage = new Page ();				
+				janelaDoPrograma.dispose();
+				Page BemvindoPage = new Page (IdUsuario);				
 				
 			}
 			else {

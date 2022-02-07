@@ -11,7 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
-import java.time.LocalTime;
+
 
 public class LoginDoSistema implements ActionListener{
 	
@@ -22,10 +22,8 @@ public class LoginDoSistema implements ActionListener{
 		JPasswordField senhaUsuario = new JPasswordField();
 		JLabel digiteUsuario = new JLabel ("Usuário: ");
 		JLabel digiteSenha = new JLabel ("Senha: ");
-		JLabel mensagemParaUsuario = new JLabel ();	
-		
-		
-		
+		JLabel mensagemParaUsuario = new JLabel ();
+		JFrame horaAtual = new JFrame();
 		HashMap <String,String> informacaologin = new HashMap <String, String>();
 	
 		
@@ -61,7 +59,7 @@ public class LoginDoSistema implements ActionListener{
 		janelaDoPrograma.setSize (420,420);
 		janelaDoPrograma.setLayout(null);
 		janelaDoPrograma.setVisible(true);
-		
+		janelaDoPrograma.add(mensagemParaUsuario); 
 			
 	}
 
@@ -78,30 +76,20 @@ public class LoginDoSistema implements ActionListener{
 			
 			String IdUsuario =  nomeUsuario.getText();
 			String Idsenha = String.valueOf(senhaUsuario.getPassword());
-			String horaAtual = informacaologin.get(e);
+			
+						
 			
 		if(informacaologin.containsKey(IdUsuario)) {
 			if(informacaologin.get(IdUsuario).equals(Idsenha)) {				
-				mensagemParaUsuario.setForeground(Color.darkGray);										
+				mensagemParaUsuario.setForeground(Color.darkGray);
+				
+				
+				
 				mensagemParaUsuario.setText("Você se logou ao nosso sistema!");
 				janelaDoPrograma.dispose();				
-				Page BemvindoPage = new Page (IdUsuario, horaAtual);
+				Page BemvindoPage = new Page (IdUsuario);				
 				
-				LocalTime horaAtual = LocalTime.now();
-				if(horaAtual.isBefore(LocalTime.of (5, 0, 0))){
-					mensagemParaUsuario.setText("Boa Madrugada, você se logou ao nosso sistema.");	
-					
-				}else if (horaAtual.isBefore(LocalTime.of(12, 0, 0))) {
-					mensagemParaUsuario.setText("Bom Dia, você se logou ao nosso sistema.");
-					
-				}else if (horaAtual.isBefore(LocalTime.of(18, 0, 0))) {
-					mensagemParaUsuario.setText("Boa tarde, você se logou ao nosso sistema.");			
-				
-			}else { 
-					mensagemParaUsuario.setText("Boa noite, você se logou ao nosso sistema.");
 			}
-			}
-								
 			else {
 				mensagemParaUsuario.setForeground(Color.red);
 				mensagemParaUsuario.setText("Senha incorreta.");
@@ -114,4 +102,3 @@ public class LoginDoSistema implements ActionListener{
 	}
 }
 }
-

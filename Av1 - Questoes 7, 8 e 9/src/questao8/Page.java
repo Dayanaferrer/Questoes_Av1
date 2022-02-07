@@ -13,11 +13,11 @@ public class Page {
 	
 	
 	
-	Page (String IdUsuario, String horaAtual){
+	Page (String IdUsuario ){
 		
 		bemvindoLabel.setBounds(0,0,200,35);
-		bemvindoLabel.setFont(new Font (null, Font.ROMAN_BASELINE, 12));
-		bemvindoLabel.setText(" Hello," + IdUsuario + horaAtual );
+		bemvindoLabel.setFont(new Font (null, Font.ROMAN_BASELINE, 10));
+		bemvindoLabel.setText( IdUsuario +  ",Você se logou ao nosso sistema." );
 		
 		frame.add(bemvindoLabel);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

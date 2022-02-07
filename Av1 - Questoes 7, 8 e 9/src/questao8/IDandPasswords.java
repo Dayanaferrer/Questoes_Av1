@@ -16,5 +16,5 @@ public class IDandPasswords {
 	public HashMap getLogininfo() {
 		return logininfo;
 	}
-	
+
 }

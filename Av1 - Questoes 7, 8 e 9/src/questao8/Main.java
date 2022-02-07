@@ -7,8 +7,7 @@ public class Main {
 		
 		IDandPasswords idandPasswords = new IDandPasswords();
 					
-		LoginDoSistema loginSistema = new LoginDoSistema(idandPasswords.getLogininfo());
-		
+		LoginDoSistema loginSistema = new LoginDoSistema(idandPasswords.getLogininfo());		
 		
 		
 }

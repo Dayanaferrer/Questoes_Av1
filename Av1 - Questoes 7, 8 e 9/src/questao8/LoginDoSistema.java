@@ -11,19 +11,24 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import java.time.LocalTime;
 
 public class LoginDoSistema implements ActionListener{
 	
-	JFrame janelaDoPrograma = new JFrame();
-	JButton botaoDeLogin = new JButton("Login");
-	JButton botaoDeReiniciar = new JButton("Recarregar");
-	JTextField nomeUsuario = new JTextField ();
-	JPasswordField senhaUsuario = new JPasswordField();
-	JLabel digiteUsuario = new JLabel ("Usuário: ");
-	JLabel digiteSenha = new JLabel ("Senha: ");
-	JLabel mensagemParaUsuario = new JLabel ();
-	HashMap <String,String> informacaologin = new HashMap <String, String>();
+		JFrame janelaDoPrograma = new JFrame();
+		JButton botaoDeLogin = new JButton("Login");
+		JButton botaoDeReiniciar = new JButton("Recarregar");
+		JTextField nomeUsuario = new JTextField ();
+		JPasswordField senhaUsuario = new JPasswordField();
+		JLabel digiteUsuario = new JLabel ("Usuário: ");
+		JLabel digiteSenha = new JLabel ("Senha: ");
+		JLabel mensagemParaUsuario = new JLabel ();	
+		
+		
+		
+		HashMap <String,String> informacaologin = new HashMap <String, String>();
 	
+		
 	LoginDoSistema(HashMap <String, String> loginOriginal){
 		
 		informacaologin = loginOriginal;
@@ -45,7 +50,6 @@ public class LoginDoSistema implements ActionListener{
 		botaoDeReiniciar.setFocusable(false);
 		botaoDeReiniciar.addActionListener(this);
 		
-		
 		janelaDoPrograma.add(digiteUsuario);
 		janelaDoPrograma.add(digiteSenha);
 		janelaDoPrograma.add(mensagemParaUsuario);
@@ -57,6 +61,7 @@ public class LoginDoSistema implements ActionListener{
 		janelaDoPrograma.setSize (420,420);
 		janelaDoPrograma.setLayout(null);
 		janelaDoPrograma.setVisible(true);
+		
 			
 	}
 
@@ -69,30 +74,44 @@ public class LoginDoSistema implements ActionListener{
 		}
 		
 		
-		/* Pegar o Login e senha com a palavra associada se ok, verifica.  Talvezs aqui tbm - implementar horario */
-		
 		if (e.getSource()==botaoDeLogin) {
 			
 			String IdUsuario =  nomeUsuario.getText();
 			String Idsenha = String.valueOf(senhaUsuario.getPassword());
+			String horaAtual = informacaologin.get(e);
 			
 		if(informacaologin.containsKey(IdUsuario)) {
 			if(informacaologin.get(IdUsuario).equals(Idsenha)) {				
-				mensagemParaUsuario.setForeground(Color.darkGray);
+				mensagemParaUsuario.setForeground(Color.darkGray);										
 				mensagemParaUsuario.setText("Você se logou ao nosso sistema!");
-				janelaDoPrograma.dispose();
-				Page BemvindoPage = new Page (IdUsuario);				
+				janelaDoPrograma.dispose();				
+				Page BemvindoPage = new Page (IdUsuario, horaAtual);
 				
+				LocalTime horaAtual = LocalTime.now();
+				if(horaAtual.isBefore(LocalTime.of (5, 0, 0))){
+					mensagemParaUsuario.setText("Boa Madrugada, você se logou ao nosso sistema.");	
+					
+				}else if (horaAtual.isBefore(LocalTime.of(12, 0, 0))) {
+					mensagemParaUsuario.setText("Bom Dia, você se logou ao nosso sistema.");
+					
+				}else if (horaAtual.isBefore(LocalTime.of(18, 0, 0))) {
+					mensagemParaUsuario.setText("Boa tarde, você se logou ao nosso sistema.");			
+				
+			}else { 
+					mensagemParaUsuario.setText("Boa noite, você se logou ao nosso sistema.");
 			}
+			}
+								
 			else {
 				mensagemParaUsuario.setForeground(Color.red);
 				mensagemParaUsuario.setText("Senha incorreta.");
 			}
 		}
-		else {
+			else {
 			mensagemParaUsuario.setForeground(Color.red);
 			mensagemParaUsuario.setText("Usuário não encontrado.");
 		}
 	}
 }
 }
+

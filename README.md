@@ -9,9 +9,6 @@
 
 ## 📝 Questões
 
- 📁 Acesso ao projeto
-Você pode acessar os da questão clicando [aqui](https://github.com/Dayanaferrer/Questoes_Av1/tree/master/Av1%20-%20Questoes%207%2C%208%20e%209/src/questao7).
-<br />
 
  ``Questão 7``: Escreva um programa Java que tem como objetivo ser um quis de perguntas e respostas. Na tela, você perguntará ao usuário e ele responderá. Se o usuário acertar ou errar, você precisa informar se ele acertou ou errou e passar para próxima pergunta (enquanto houver próxima). Utilizem array para guardar as perguntas e respostas. No fim do quis, você deve apresentar quantas o usuário acertou e quantas ele errou.
  
@@ -30,9 +27,6 @@ sistema.”
 - Se o usuário ou senha for inválidos, deverá exibir a mensagem: “Usuário e/ou senha
 incorretos.”
 
- 📁 Acesso ao projeto
-Você pode acessar os da questão clicando [aqui](https://github.com/Dayanaferrer/Questoes_Av1/tree/master/Av1%20-%20Questoes%207%2C%208%20e%209/src/questao8).
-<br />
 
 ``Questão 9``: Escreva um programa Java que tem como objetivo validar se um determinado funcionário
 tem direito a bonificação. O programa precisa receber a quantidade de funcionários que

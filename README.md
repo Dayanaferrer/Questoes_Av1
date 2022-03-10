@@ -35,7 +35,7 @@ funcionário. Se o usuário receber até R$ 1000,00 reais, receberá 20% de boni
 receber acima de 1000 e menos que 2000, recebe 10%. Se for acima de 2000, ao invés de
 bonificação, o funcionário terá um desconto de 10%.
 No fim do programa, deverá ter uma saída com os nomes dos funcionários, salário, bônus ou
-desconto e salário liquido.
+desconto e salário liquido
 
 <br />
 
